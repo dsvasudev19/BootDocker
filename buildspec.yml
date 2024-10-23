@@ -27,7 +27,7 @@ phases:
       - echo Writing image definitions file...
       # add your container name ie. ECR repository name which is also known as  Note: keep ecr registry name and ecs 
       # container name same (step 5.3 name) , if they are different then give ecs -task -> container-1 name  
-      - DOCKER_CONTAINER_NAME=aws/boot-docker      
+      - DOCKER_CONTAINER_NAME=boot-docker      
       - printf '[{"name":"%s","imageUri":"%s"}]' $DOCKER_CONTAINER_NAME $REPOSITORY_URI:$IMAGE_TAG > imagedefinitions.json
       - echo $DOCKER_CONTAINER_NAME
       - echo printing imagedefinitions.json
@@ -37,3 +37,5 @@ artifacts:
   files:
     - imagedefinitions.json
     - target/bootdocker.jar
+    
+#Hello    
